@@ -17,12 +17,12 @@ class FairbidRayole {
 
   static final FairbidRayolePlatform _platform = FairbidRayolePlatform.instance;
 
-  Future initialize({required String fairbidAppId}) async{
+  static Future initialize({required String fairbidAppId}) async{
 
     _platform.initialize(fairbidAppId: fairbidAppId);
   }
 
-   Future setUserId({required String userId}) async{
+  static Future setUserId({required String userId}) async{
      _platform.setUserId(userId: userId);
   }
 
