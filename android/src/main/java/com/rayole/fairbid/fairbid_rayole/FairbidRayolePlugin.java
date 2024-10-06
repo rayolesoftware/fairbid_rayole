@@ -64,7 +64,7 @@ public class FairbidRayolePlugin implements FlutterPlugin,ActivityAware, MethodC
             @Override
             public void onShowFailure(String placementId, ImpressionData impressionData) {
                 // Called when an error arises when showing the rewarded ad from placement 'placementId'
-                channel.invokeMethod("onShowFailure", "");
+                channel.invokeMethod("onShowFailure", placementId);
             }
 
             @Override
@@ -76,7 +76,7 @@ public class FairbidRayolePlugin implements FlutterPlugin,ActivityAware, MethodC
             @Override
             public void onUnavailable(String placementId) {
                 // Called when a rewarded ad from placement 'placementId' becomes unavailable
-                channel.invokeMethod("onUnavailable", "");
+                channel.invokeMethod("onUnavailable", placementId);
             }
 
             @Override

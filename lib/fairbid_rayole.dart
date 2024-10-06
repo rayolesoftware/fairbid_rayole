@@ -64,10 +64,6 @@ class FairbidRayole {
     }
   }
 
-  Future<String?> getPlatformVersion() {
-    return FairbidRayolePlatform.instance.getPlatformVersion();
-  }
-
   static void setAdListener({
     Function()? onShow,
     Function()? onClick,
@@ -90,12 +86,14 @@ class FairbidRayole {
           if (onHide != null) onHide();
           break;
         case 'onShowFailure':
+          loadRewardedAd(adIds: [call.arguments]);
           if (onShowFailure != null) onShowFailure();
           break;
         case 'onAvailable':
           if (onAvailable != null) onAvailable();
           break;
         case 'onUnavailable':
+          loadRewardedAd(adIds: [call.arguments]);
           if (onUnavailable != null) onUnavailable();
           break;
         case 'onCompletion':
